@@ -13,18 +13,24 @@ body {
 
 .flex { display: flex;}
 .horizontal {flex-direction: row;}
-.horizontal {flex-direction: column;}
+.vertical {flex-direction: column;}
 
 .flex-1 {flex: 1;}
 .flex-2 {flex: 2;}
 .flex-3 {flex: 3;}
 
-.flex-start{
-  justify-content: flex-start;
+
+.flex-end
+.flex-start
+.flex-center{
   align-items: center;
 }
-
+.flex-start {
+  justify-content: flex-start;
+}
 .flex-end{
   justify-content: flex-end;
-  align-items: center;
+}
+.flex-center{
+  justify-content: center;
 }

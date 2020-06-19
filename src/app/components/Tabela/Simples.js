@@ -15,7 +15,7 @@ const TabalaSimples = ({ cabecalho, dados }) => (
                 dados.map((linha, idx) => (
                     <tr key={idx}>
                         {
-                            Object.keys(cabecalho).map((item, index) => (
+                            cabecalho.map((item, index) => (
                                 <td key={index}>{linha[item] || ""}</td>
                             ))
                         }

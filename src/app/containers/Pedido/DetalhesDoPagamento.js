@@ -1,11 +1,39 @@
 import React, { Component } from 'react';
+import Titulo from '../../components/Texto/Titulo';
+import ListaDinamica from '../../components/Listas/ListaDinamicaSimples';
 
+class DetalhesDoPagamento extends Component {
 
-class DetalhesDoPagamento extends Component{
-    render(){
-        return(
+    state = {
+        status: [
+            "Aguardando Pagamento",
+            "Processando Pagamento"
+        ]
+    }
+
+    /** 
+    onRemoveListaDinamica = (index) => {
+        let { status } = this.state;
+        status = status.filter((item, _index) => _index !== index);
+        this.setState({ status });
+    }
+    */
+    onAddListaDinamica = (texto) => {
+        if (!texto) return false;
+        let { status } = this.state;
+        status.push(texto);
+        this.setState({ status });
+    }
+    render() {
+        const {status} = this.state;
+        return (
             <div className="Detalhes-do-Pagamento">
-                Detalhes do Pagamento
+                <Titulo tipo="h4" titulo="Pagamento" />
+                <br />
+                <ListaDinamica
+                    dados={status}
+                    {/**onRemove={this.onRemoveListaDinamica}*/}
+                    onAddListaDinamica={this.onAddListaDinamica} />
             </div>
         )
     }

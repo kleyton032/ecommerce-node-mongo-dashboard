@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Titulo from '../../components/Texto/Titulo';
 import ButtonSimples from '../../components/Button/Simples'
-import TabelaSimples from '../../components/Tabela/Simples';
 import { TextoDados } from '../../components/Texto/Dados';
 import TabalaSimples from '../../components/Tabela/Simples';
 class DetalhesDoPedido extends Component {
@@ -74,7 +73,8 @@ class DetalhesDoPedido extends Component {
                 "Preço Total": "R$ 20,00"
             }
         ]
-        return(){
+        
+        return(
             <div>
                 <Titulo tipo="h4" titulo="Carrinho"/>
                 <br/>
@@ -82,7 +82,7 @@ class DetalhesDoPedido extends Component {
                 <TabalaSimples cabecalho={"Produto", "Preço Und.", "Quantidade", "Preço Total"} dados={dados}/>
                 
             </div>
-        }
+        )
     }
 
     render() {

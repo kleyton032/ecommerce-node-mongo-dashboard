@@ -32,7 +32,7 @@ class DetalhesDoPagamento extends Component {
                 <br />
                 <ListaDinamica
                     dados={status}
-                    {/**onRemove={this.onRemoveListaDinamica}*/}
+                    /**onRemove={this.onRemoveListaDinamica}*/
                     onAddListaDinamica={this.onAddListaDinamica} />
             </div>
         )

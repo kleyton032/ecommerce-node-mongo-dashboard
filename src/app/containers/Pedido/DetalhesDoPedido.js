@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Titulo from '../../components/Texto/Titulo';
 import ButtonSimples from '../../components/Button/Simples'
 import { TextoDados } from '../../components/Texto/Dados';
-import TabalaSimples from '../../components/Tabela/Simples';
+import TabelaSimples from '../../components/Tabela/Simples';
 class DetalhesDoPedido extends Component {
 
     renderCabecalho() {
@@ -79,7 +79,7 @@ class DetalhesDoPedido extends Component {
                 <Titulo tipo="h4" titulo="Carrinho"/>
                 <br/>
 
-                <TabalaSimples cabecalho={"Produto", "Preço Und.", "Quantidade", "Preço Total"} dados={dados}/>
+                <TabelaSimples cabecalho={["Produto", "Preço Und.", "Quantidade", "Preço Total"]} dados={dados}/>
                 
             </div>
         )

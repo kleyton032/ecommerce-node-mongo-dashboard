@@ -8,14 +8,14 @@ class Pedido extends Component {
     render() {
         return (
             <div className="Pedidos flex vertical">
-                <div>
+                <div className="Card">
                     <DetalhesDoPedido />
                 </div>
                 <div className="flex horizontal">
-                    <div className="flex-1 flex vertical">
+                    <div className="Card flex-1 flex vertical">
                         <DetalhesDaEntrega />
                     </div>
-                    <div className="flex-1 flex vertical">
+                    <div className="Card flex-1 flex vertical">
                         <DetalhesDoPagamento />
                     </div>
                 </div>

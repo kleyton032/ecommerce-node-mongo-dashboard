@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import ButtonSimples from '../Button/Simples';
 class InputValor extends Component {
     state = {
         value: this.props.value,
@@ -9,7 +9,7 @@ class InputValor extends Component {
     onChange = (ev) => this.setState({ value: ev.tartget.value })
     toggleForm = () => this.setState({ form: !this.state.form, value: this.props.value })
 
-    handleSubmit(value){
+    handleSubmit(value) {
         this.props.handleSubmit(value);
         this.toggleForm();
     }
@@ -17,19 +17,21 @@ class InputValor extends Component {
     renderForm() {
         const { value } = this.state;
         return (
-            <div className="Input-Valor input-valor-open">
-                 <div>
+            <div className="Input-Valor flex input-valor-open">
+                <div>
                     <input value={value}
-                        onChange={this.onChange} 
-                        name={this.props.name}/>
+                        onChange={this.onChange}
+                        name={this.props.name} />
                 </div>
-                <div> 
-                    <div onClick={() => this.handleSubmit(value)}>
-                        <i className="fas fa-check" />
-                    </div>
-                    <div onClick={this.toggleForm}>
-                        <i className="fas fa-times" />
-                    </div>
+                <div className="flex flex-center">
+                    <ButtonSimples
+                        type="success button-small"
+                        onClick={() => this.handleSubmit(value)}
+                        label={(<i className="fas fa-check" />)} />
+                    <ButtonSimples
+                        type="danger button-small"
+                        onClick={this.toggleForm}
+                        label={(<i className="fas fa-times" />)} />
                 </div>
             </div >
         )
@@ -38,10 +40,13 @@ class InputValor extends Component {
     renderValue() {
         const { value } = this.props;
         return (
-            <div className="Input-Valor">
-                <span>{value}</span>
-                <div onClick={() => this.toggleForm()}>
-                    <i className="fas fa-edit" />
+            <div className="Input-Valor flex" onClick={() => this.toggleForm()}>
+                <span className="input">{value}</span>
+                <div className="flex flex-center">
+                    <ButtonSimples
+                        type="warning button-small"
+
+                        label={(<i className="fas fa-edit" />)} />
                 </div>
             </div>
         )

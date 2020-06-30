@@ -29,13 +29,13 @@ class DetalhesDaEntrega extends Component {
         const { status, codigoRastreamento } = this.state;
         return (
             <div className="Detalhes-da-Entrega">
-                <Titulo tipo="h4" titulo="Entrega" />
+                <Titulo tipo="h3" titulo="Entrega" />
                 <br />
                 <label>Código de Rastreamento</label>
                 <InputValor
                     value={codigoRastreamento}
                     handleSubmit={(value) => this.handleSubmit(value)} 
-                    name={"codigoRastreamento"}/>:
+                    name={"codigoRastreamento"}/>
                 <br />
                 <ListaDinamica
                     dados={status}

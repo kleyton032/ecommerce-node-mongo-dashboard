@@ -102,14 +102,17 @@ body {
 .menu-item i{
   font-size: 1.5rem;
 }
-.Card{
+.Card, .Sub-Card{
   margin: 40px 20px;
   padding: 30px;
   border-radius: 10px;
   border: 0;
   box-shadow: 0 0 5px #7777;
   background-color: var(--cor-branca);
-  width: 100%;
+ 
+}
+.Sub-Card{
+margin-top: 0;
 }
 
 .Pesquisa input{
@@ -191,6 +194,10 @@ table.simples th:last-child{
 main{
   overflow-y: scroll;
 }
+
+main > div{
+  margin-right: 120px;
+}
 .Paginacao{
   display: flex;
   justify-content: flex-end;
@@ -216,4 +223,60 @@ main{
   background-color: var(--cor-cinza-escuro);
   color: var(--cor-cinza-claro);
   border: 1px solid var(--cor-cinza-escuro);
+}
+
+.Link-Voltar{
+  text-decoration: solid;
+  color: var(--cor-tema);
+  font-size: 1rem;
+}
+
+.Input-Simples label{
+  margin: 5px 0 5px 0;
+  font-weight: bold;
+}
+
+
+.Input-Simples input{
+  padding:  8px 12px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid var(--cor-cinza-escuro);
+  font-size: 0.85rem;
+}
+
+.border-green{
+  border-left: 4px solid var(--cor-secundaria);
+  padding-left: 5px;
+  margin: 2px 0;
+}
+
+.Input-Valor{
+  margin: 10px 0;
+}
+
+.Input-Valor input, .Input-Valor .input {
+  border:  1px solid var(--cor-cinza-escuro);
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+}
+
+.Input-Valor .input{
+   background-color: var(--cor-cinza-claro);
+   color: var(--cor-cinza-escuro);
+}
+
+.Login h1{
+  font-size: 3rem;
+  color: var(--cor-tema);
+  margin-bottom: 0;
+}
+.Login p{
+  font-weight: bold;
+}
+
+.Login .Card{
+  width: 85%;
+  max-width: 350px;
 }

@@ -7,11 +7,11 @@ class DetalhesDoPedido extends Component {
 
     renderCabecalho() {
         return (
-            <div>
-                <div>
+            <div className="flex">
+                <div className="flex-1 flex">
                     <Titulo tipo="h2" titulo="Pedido - Cliente 1 - 01/06/2020" />
                 </div>
-                <div>
+                <div className="flex-1 flex flex-end">
                     <ButtonSimples type="danger" label="CANCELAR PEDIDO" onClick={() => alert("Cancelado")} />
                 </div>
             </div>
@@ -20,7 +20,7 @@ class DetalhesDoPedido extends Component {
 
     renderDadosDoCliente() {
         return (
-            <div>
+            <div className="flex-2">
                 <Titulo tipo="h4" titulo="Dados do Cliente" />
                 <br />
                 <TextoDados chave="Nome:" valor="Cliente 1" />
@@ -33,7 +33,7 @@ class DetalhesDoPedido extends Component {
 
     renderDadosDeEntrega() {
         return (
-            <div>
+            <div className="flex-2">
                 <Titulo tipo="h4" titulo="Dados da Entrega" />
                 <br />
                 <TextoDados chave="Endereço:" valor="Rua Qualquer" />
@@ -47,7 +47,7 @@ class DetalhesDoPedido extends Component {
 
     renderDadosDePagamento() {
         return (
-            <div>
+            <div className="flex-3">
                 <Titulo tipo="h4" titulo="Dados do Pagamento" />
                 <br />
                 <TextoDados chave="Taca de Entrega:" valor="R$ 16,50 (PAC)" />
@@ -58,29 +58,29 @@ class DetalhesDoPedido extends Component {
         )
     }
 
-    renderDadosDoCarrinho(){
+    renderDadosDoCarrinho() {
         const dados = [
             {
                 "Produto": "Produto 1",
-                "Preço Und.": "R$ 20,00", 
-                "Quantidade": "1", 
+                "Preço Und.": "R$ 20,00",
+                "Quantidade": "1",
                 "Preço Total": "R$ 20,00"
             },
             {
                 "Produto": "Produto 2",
-                "Preço Und.": "R$ 20,00", 
-                "Quantidade": "1", 
+                "Preço Und.": "R$ 20,00",
+                "Quantidade": "1",
                 "Preço Total": "R$ 20,00"
             }
         ]
-        
-        return(
-            <div>
-                <Titulo tipo="h4" titulo="Carrinho"/>
-                <br/>
 
-                <TabelaSimples cabecalho={["Produto", "Preço Und.", "Quantidade", "Preço Total"]} dados={dados}/>
-                
+        return (
+            <div className="flex-3">
+                <Titulo tipo="h4" titulo="Carrinho" />
+                <br />
+
+                <TabelaSimples cabecalho={["Produto", "Preço Und.", "Quantidade", "Preço Total"]} dados={dados} />
+
             </div>
         )
     }
@@ -89,10 +89,17 @@ class DetalhesDoPedido extends Component {
         return (
             <div className="Detalhes-do-Pedido">
                 {this.renderCabecalho()}
-                {this.renderDadosDoCliente()}
-                {this.renderDadosDoCarrinho()}
-                {this.renderDadosDeEntrega()}
-                {this.renderDadosDePagamento()}
+                <div className="flex vertical">
+                    <div className="flex horizontal">
+                        {this.renderDadosDoCliente()}
+                        {this.renderDadosDoCarrinho()}
+
+                    </div>
+                    <div className="flex horizontal">
+                        {this.renderDadosDeEntrega()}
+                        {this.renderDadosDePagamento()}
+                    </div>
+                </div>
             </div>
         )
     }

@@ -19,12 +19,18 @@ class Login extends Component {
     render() {
         const { email, senha, opcaoLembrar } = this.state;
         return (
-            <div className="Login">
-                <div className="card">
-                    <Titulo tipo="h1" titulo="LOJA IT" />
+            <div className="Login flex flex-center">
+                <div className="Card">
+                    <div className="flex flex-center horizontal">
+                        <Titulo tipo="h1" titulo="LOJA IT" />
+                    </div>
+                    <br/>
 
-                    <p>Faça seu login</p>
+                    <div className="flex flex-center horizontal">
+                        <p>Faça seu login</p>
+                    </div>
 
+                    <br />
                     <Input
                         label="E-mail"
                         value={email}
@@ -37,16 +43,21 @@ class Login extends Component {
                         type="password"
                         onChange={(ev) => this.onChangeInput("senha", ev)} />
 
-                    <div>
-                        <div>
+                    <div className="flex">
+                        <div className="flex-1">
                             <Checkbox value={opcaoLembrar}
-                                onChange={() => this.onChangeCheckbox("opcaoLembrar")} />
+                                onChange={() => this.onChangeCheckbox("opcaoLembrar")}
+                                label="Lembrar-me" />
                         </div>
-                        <div>
-                            <Link to="recuperar-senha">Esqueceu sua Senha?</Link>
+                        <div className="flex-1 flex flex-end">
+                            <Link to="recuperar-senha"><small>Esqueceu sua Senha?</small></Link>
                         </div>
                     </div>
-                    <Button type="success" rota="/" label="ENTRAR"/>
+                    <br />
+                    <div className="flex flex-end">
+                        <Button type="success" rota="/" label="ENTRAR" />
+                    </div>
+
                 </div>
             </div>
         )

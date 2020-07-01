@@ -16,28 +16,32 @@ class ResetarSenha extends Component {
     render() {
         const { senha, confirmarSenha } = this.state;
         return (
-            <div className="Resetar-Senha">
-                <Titulo tipo="h1" titulo="LOJA IT" />
-                <br />
-                <div>
-                    <p>Para reiniciar sua senha digite sa nova senha e confirme no campo abaixo!</p>
-                </div>
-                <br />
-                <div>
-                    <Input
-                        label="Senha"
-                        value={senha}
-                        onChange={(ev) => this.onChangeInput("senha", ev)}
-                        type="password" />
+            <div className="Resetar-Senha flex flex-center">
+                <div className="Card">
+                    <div className="flex flex-center">
+                        <Titulo tipo="h1" titulo="LOJA IT" />
+                    </div>
+                    <br />
+                    <div>
+                        <p>Para reiniciar sua senha digite sa nova senha e confirme no campo abaixo!</p>
+                    </div>
+                    <br />
+                    <div>
+                        <Input
+                            label="Senha"
+                            value={senha}
+                            onChange={(ev) => this.onChangeInput("senha", ev)}
+                            type="password" />
 
-                    <Input
-                        label="Confirmar Senha"
-                        value={confirmarSenha}
-                        onChange={(ev) => this.onChangeInput("confirmarSenha", ev)}
-                        type="password" />
-                </div>
-                <div>
-                    <Button type="success" rota="/login" label="RESETAR SENHA"/>
+                        <Input
+                            label="Confirmar Senha"
+                            value={confirmarSenha}
+                            onChange={(ev) => this.onChangeInput("confirmarSenha", ev)}
+                            type="password" />
+                    </div>
+                    <div className="flex flex-end">
+                        <Button type="success" rota="/login" label="RESETAR SENHA" />
+                    </div>
                 </div>
             </div>
         )

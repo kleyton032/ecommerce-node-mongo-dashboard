@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ButtonSimples from '../Button/Simples';
 import InputSimples from '../Inputs/Simples';
 
-    class ListaDinamicaSimples extends React.Component {
+    class ListaDinamicaSimples extends Component {
         state = { texto: "" }
 
         onChangeInput = (ev) => this.setState({ texto: ev.target.value })

@@ -1,11 +1,7 @@
 import React from 'react';
 import Titulo from '../../components/Texto/Titulo';
-
-import Pesquisa from '../../components/Inputs/Pesquisa';
 import Tabela from '../../components/Tabela/Simples';
-import Paginacao from '../../components/Paginacao/Simples';
 import moment from 'moment';
-import DetalhesDoCliente from './DetalhesDoCliente';
 
 class DetalhesDosPedidos extends React.Component {
 

@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-
 import Titulo from '../../components/Texto/Titulo';
 import Input from '../../components/Inputs/Simples';
 import Button from '../../components/Button/Simples';
-import { Link } from 'react-router-dom';
+
 
 
 class RecuperarSenha extends Component {

@@ -9,14 +9,16 @@ class DetalhesDaCategoria extends Component {
 
     state = {
         nome: "Categoria",
-        disponibilidade: "disponivel"
+        disponibilidade: "disponivel",
+        codigo: "categoria"
     }
 
     renderCabecalho() {
+        const { nome } = this.state;
         return (
             <div className="flex">
                 <div className="flex-1 flex">
-                    <Titulo tipo="h2" titulo="Categoria" />
+                    <Titulo tipo="h2" titulo={nome} />
                 </div>
                 <div className="flex-1 flex flex-end">
                     <ButtonSimples
@@ -33,7 +35,7 @@ class DetalhesDaCategoria extends Component {
     }
 
     renderDados() {
-        const { nome, disponibilidade } = this.state;
+        const { nome, disponibilidade, codigo } = this.state;
         return (
             <div className="flex vertical">
                 <TextoDados chave="Nome"
@@ -45,6 +47,16 @@ class DetalhesDaCategoria extends Component {
                     />)}
                 />
                 <br />
+
+                <TextoDados chave="Código"
+                    valor={(
+                    <InputValor
+                        name="codigo" noStyle
+                        value={codigo}
+                        handleSubmit={(valor) => this.setState({ codigo: valor })}
+                    />)}
+                />
+
                 <TextoDados
                     chave="Disponibilidade:"
                     valor={(
@@ -59,7 +71,7 @@ class DetalhesDaCategoria extends Component {
 
     render() {
         return (
-            <div className="Detlalhes-Categoria">
+            <div className="Detalhes-Categoria">
                 {this.renderCabecalho()}
                 {this.renderDados()}
             </div>

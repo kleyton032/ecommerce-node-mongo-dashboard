@@ -1,10 +1,9 @@
 import React from 'react';
 import Titulo from '../../components/Texto/Titulo';
-
 import Pesquisa from '../../components/Inputs/Pesquisa';
 import Tabela from '../../components/Tabela/Simples';
 import Paginacao from '../../components/Paginacao/Simples';
-import moment from 'moment';
+
 
 class Categorias extends React.Component {
 

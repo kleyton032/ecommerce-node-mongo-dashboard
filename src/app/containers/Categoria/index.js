@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-
 import DetalhesDaCategoria from './DetalhesDaCategoria';
-//import ListaDeProdutos from './ListaDeProdutos'
+import ListaDeProdutos from './ListaDeProdutos'
 
 class Categoria extends Component {
     render() {
@@ -13,7 +12,7 @@ class Categoria extends Component {
                     </div>
 
                     <div>
-                        {/**<ListaDeProdutos />*/}
+                        <ListaDeProdutos />
                     </div>
                 </div>
             </div>

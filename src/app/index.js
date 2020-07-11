@@ -18,6 +18,7 @@ import Login from './containers/Login'
 import RecuperarSenha from './containers/RecuperarSenha'
 import ResetarSenha from './containers/RecuperarSenha/ResetarSenha'
 import Produtos from './containers/Produtos';
+import Produto from './containers/Produto';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path={"/categoria"} component={base(Categoria)}/>
 
             <Route path={"/produtos"} component={base(Produtos)}/>
+            <Route path={"/produto/:id"} component={base(Produto)}/>
             
             <Route path={"/login"} component={(Login)}/>
             <Route path={"/recuperar-senha"} component={(RecuperarSenha)}/>

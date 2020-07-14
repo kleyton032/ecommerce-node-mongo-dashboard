@@ -29,17 +29,17 @@ class Categorias extends React.Component {
             {
                 "Categoria": "Informática",
                 "Qtd. de Produtos": 100,
-                "botaoDetalhes": "/cliente/informatica"
+                "botaoDetalhes": "/categoria/informatica"
             },
             {
                 "Categoria": "Gamer",
                 "Qtd. de Produtos": 27,
-                "botaoDetalhes": "/cliente/gamer"
+                "botaoDetalhes": "/categoria/gamer"
             },
             {
                 "Categoria": "Processadores",
                 "Qtd. de Produtos": 15,
-                "botaoDetalhes": "/cliente/processadores"
+                "botaoDetalhes": "/categoria/processadores"
             }
             
         ]

@@ -3,11 +3,11 @@ import DetalhesProduto from './detalhesProduto';
 import DetalhesVariacoes from './detalhesVariacoes';
 
 class Produto extends Component {
-    React(){
-        return(
+    render() {
+        return (
             <div className="Produto full-width flex vertical">
                 <div className="Card">
-                    <DetalhesProduto/>
+                    <DetalhesProduto />
                 </div>
                 <div className="Card">
                     {/**<DetalhesVariacoes/>*/}

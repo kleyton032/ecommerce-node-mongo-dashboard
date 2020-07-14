@@ -24,25 +24,25 @@ class Produtos extends Component {
                 "Produto": "Teclado",
                 "Categoria": "perifericos",
                 "Disponível": "sim",
-                "botaoDetalhes": "/produtos/654G564DFGH654"
+                "botaoDetalhes": "/produto/654G564DFGH654"
             },
             {
                 "Produto": "Teclado Gamer",
                 "Categoria": "perifericos",
                 "Disponível": "sim",
-                "botaoDetalhes": "/produtos/FGHJ6F875498"
+                "botaoDetalhes": "/produto/FGHJ6F875498"
             },
             {
                 "Produto": "Teclado Dell",
                 "Categoria": "perifericos",
                 "Disponível": "sim",
-                "botaoDetalhes": "/produtos/233987987DFGHD"
+                "botaoDetalhes": "/produto/233987987DFGHD"
             },
             {
                 "Produto": "Teclado HP",
                 "Categoria": "perifericos",
                 "Disponível": "não",
-                "botaoDetalhes": "/produtos/9DF8G9DFGH123F"
+                "botaoDetalhes": "/produto/9DF8G9DFGH123F"
             },
 
         ]

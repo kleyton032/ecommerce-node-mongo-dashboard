@@ -4,6 +4,7 @@ import Button from '../../components/Button/Simples';
 import { TextoDados } from '../../components/Texto/Dados';
 import InputValor from '../../components/Inputs/InputValor';
 import BlocoImagens from '../../components/Imagens/Bloco';
+import InputSelect from '../../components/Inputs/Select';
 import { Link } from 'react-router-dom';
 
 
@@ -56,12 +57,17 @@ class DetalhesProduto extends Component {
                     )} />
 
                 <TextoDados
-                    chave="Disponibilidade"
+                    chave="Disponibilidade:"
                     valor={(
-                        <InputValor
+                        <InputSelect
+                            name="disponibilidade"
+                            onChange={(ev) => this.setState({ disponibilidade: ev.target.value })}
                             value={disponibilidade}
-                            name="disponibilidade" noStyle
-                            onChange={(ev) => this.setState({ disponibilidade: ev.target.value })} />
+                            opcoes={[
+                                { label: "Disponível", value: "disponivel" },
+                                { label: "Indisponível", value: "indisponivel" }
+                            ]} />
+
                     )} />
 
                 <TextoDados
@@ -80,18 +86,18 @@ class DetalhesProduto extends Component {
     }
 
     onRemove() {
-        const {imagens} = this.state;
-        this.setState ({imagens: imagens.filter((i, idx)=> idx !== i)})
+        const { imagens } = this.state;
+        this.setState({ imagens: imagens.filter((i, idx) => idx !== i) })
     }
 
     renderImagens() {
         const { imagens } = this.state;
         return (
             <div className="dados-de-imagens">
-                <BlocoImagens 
-                imagens={imagens}
-                handleSubmit={()=> alert("Enviado")}
-                onRemove={this.onRemove}/>
+                <BlocoImagens
+                    imagens={imagens}
+                    handleSubmit={() => alert("Enviado")}
+                    onRemove={this.onRemove} />
 
             </div>
         )

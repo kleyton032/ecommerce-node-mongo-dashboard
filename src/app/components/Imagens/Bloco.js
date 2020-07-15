@@ -19,9 +19,7 @@ class BlocoImagem extends React.Component {
                             </div>
                         ))
                     }
-
                 </div>
-
             </div>
         )
     }

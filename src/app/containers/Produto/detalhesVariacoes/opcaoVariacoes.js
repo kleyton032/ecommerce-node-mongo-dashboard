@@ -55,7 +55,7 @@ class OpcaoVariacoes extends Component {
                         <InputValor
                             value={nome}
                             name="nome" noStyle
-                            onChange={(ev) => this.setState({ nome: ev.target.value })} />
+                            handleSubmit={(valor) => this.setState({ nome: valor })} />
                     )} />
 
                 <TextoDados
@@ -63,7 +63,7 @@ class OpcaoVariacoes extends Component {
                     valor={(
                         <InputSelect
                             name="disponibilidade"
-                            onChange={(ev) => this.setState({ disponibilidade: ev.target.value })}
+                            handleSubmit={(ev) => this.setState({ disponibilidade: ev.target.value })}
                             value={disponibilidade}
                             opcoes={[
                                 { label: "Disponível", value: "disponivel" },
@@ -78,7 +78,7 @@ class OpcaoVariacoes extends Component {
                             value={preco}
                             name="preco" noStyle
                             type="number"
-                            onChange={(ev) => this.setState({ preco: Number(ev.target.value) })} />
+                            handleSubmit={(valor) => this.setState({ preco: Number(valor) })} />
                     )} />
                 <TextoDados
                     chave="Preço Promocional"
@@ -87,7 +87,7 @@ class OpcaoVariacoes extends Component {
                             value={promocao}
                             name="promocao" noStyle
                             type="number"
-                            onChange={(ev) => this.setState({ promocao: Number(ev.target.value) })} />
+                            handleSubmit={(valor) => this.setState({ promocao: Number(valor) })} />
                     )} />
                 <TextoDados
                     chave="Quantidade"
@@ -95,7 +95,7 @@ class OpcaoVariacoes extends Component {
                         <InputValor
                             value={quantidade}
                             name="quantidade" noStyle
-                            onChange={(ev) => this.setState({ quantidade: ev.target.value })} />
+                            handleSubmit={(valor) => this.setState({ quantidade:valor })} />
                     )} />
             </div>
         )
@@ -112,7 +112,7 @@ class OpcaoVariacoes extends Component {
                             value={peso}
                             name="peso" noStyle
                             type="number"
-                            onChange={(ev) => this.setState({ peso: ev.target.value })} />
+                            handleSubmit={(valor) => this.setState({ peso:Number(valor) })} />
                     )} />
 
                 <TextoDados
@@ -122,7 +122,7 @@ class OpcaoVariacoes extends Component {
                             value={largura}
                             name="largura" noStyle
                             type="number"
-                            onChange={(ev) => this.setState({ largura: ev.target.value })} />
+                            handleSubmit={(valor) => this.setState({ largura: Number(valor) })} />
                     )} />
                 <TextoDados
                     chave="Comprimento (cm)"
@@ -131,7 +131,7 @@ class OpcaoVariacoes extends Component {
                             value={comprimento}
                             name="comprimento" noStyle
                             type="number"
-                            onChange={(ev) => this.setState({ comprimento: Number(ev.target.value) })} />
+                            handleSubmit={(valor) => this.setState({ comprimento: Number(valor) })} />
                     )} />
                 <TextoDados
                     chave="Altura (cm)"
@@ -140,7 +140,7 @@ class OpcaoVariacoes extends Component {
                             value={altura}
                             name="altura" noStyle
                             type="number"
-                            onChange={(ev) => this.setState({ promocao: Number(ev.target.value) })} />
+                            handleSubmit={(valor) => this.setState({ promocao: Number(valor) })} />
                     )} />
             </div>
         )

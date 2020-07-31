@@ -34,7 +34,7 @@ class DetalhesDaEntrega extends Component {
                 <label>Código de Rastreamento</label>
                 <InputValor
                     value={codigoRastreamento}
-                    handleSubmit={(value) => this.handleSubmit(value)} 
+                    handleSubmit={(valor) => this.handleSubmit(valor)} 
                     name={"codigoRastreamento"}/>
                 <br />
                 <ListaDinamica

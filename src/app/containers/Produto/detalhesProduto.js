@@ -53,7 +53,7 @@ class DetalhesProduto extends Component {
                         <InputValor
                             value={nome}
                             name="nome" noStyle
-                            onChange={(ev) => this.setState({ nome: ev.target.value })} />
+                            handleSubmit={(valor) => this.setState({ nome: valor })} />
                     )} />
 
                 <TextoDados

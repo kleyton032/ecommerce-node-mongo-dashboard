@@ -6,7 +6,7 @@ class InputValor extends Component {
         form: false
     }
 
-    onChange = (ev) => this.setState({ value: ev.tartget.value })
+    onChange = (ev) => this.setState({ value: ev.target.value })
     toggleForm = () => this.setState({ form: !this.state.form, value: this.props.value })
 
     handleSubmit(value) {
@@ -19,7 +19,8 @@ class InputValor extends Component {
         return (
             <div className="Input-Valor flex input-valor-open">
                 <div>
-                    <input value={value}
+                    <input 
+                        value={value}
                         onChange={this.onChange}
                         name={this.props.name} 
                         type={this.props.type || "text"}/>

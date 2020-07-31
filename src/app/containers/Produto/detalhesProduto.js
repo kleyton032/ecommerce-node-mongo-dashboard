@@ -5,6 +5,7 @@ import { TextoDados } from '../../components/Texto/Dados';
 import InputValor from '../../components/Inputs/InputValor';
 import BlocoImagens from '../../components/Imagens/Bloco';
 import InputSelect from '../../components/Inputs/Select';
+import Voltar from '../../components/Links/Voltar';
 import { Link } from 'react-router-dom';
 
 
@@ -107,6 +108,7 @@ class DetalhesProduto extends Component {
     render() {
         return (
             <div className="Detalhes-do-Produto">
+                <Voltar path="/produtos"/>
                 {this.renderCabecalho()}
                 <br />
                 <div className="flex horizontal">

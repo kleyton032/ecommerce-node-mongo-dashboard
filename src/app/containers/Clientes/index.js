@@ -61,7 +61,7 @@ class Clientes extends React.Component {
                         onChange={(ev) => this.onChangePesquisa(ev)}
                         onClick={() => alert("Pesquisar")} />
                     <br />
-                    <div className="flex flex-center">
+                    <div className="flex">
                     <Tabela
                         cabecalho={["Cliente", "E-mail", "Telefone", "CPF"]}
                         dados={dados} />

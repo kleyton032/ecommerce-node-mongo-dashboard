@@ -11,14 +11,17 @@ import Clientes from './containers/Clientes';
 import Cliente from './containers/Cliente';
 import Categorias from './containers/Categorias';
 import Categoria from './containers/Categoria';
+import Produtos from './containers/Produtos';
+import Produto from './containers/Produto';
+import Avaliacoes from './containers/Avaliacoes';
+import Avaliacao from './containers/Avaliacao';
 
 
 //CONTAINER SEM BASE
 import Login from './containers/Login'
 import RecuperarSenha from './containers/RecuperarSenha'
 import ResetarSenha from './containers/RecuperarSenha/ResetarSenha'
-import Produtos from './containers/Produtos';
-import Produto from './containers/Produto';
+
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
 
             <Route path={"/produtos"} component={base(Produtos)}/>
             <Route path={"/produto/:id"} component={base(Produto)}/>
+
+            <Route path={"/avaliacoes/:id"} component={base(Avaliacoes)}/>
+            <Route path={"/avaliacao/:id"} component={base(Avaliacao)}/>
             
             <Route path={"/login"} component={(Login)}/>
             <Route path={"/recuperar-senha"} component={(RecuperarSenha)}/>

@@ -15,12 +15,14 @@ import Produtos from './containers/Produtos';
 import Produto from './containers/Produto';
 import Avaliacoes from './containers/Avaliacoes';
 import Avaliacao from './containers/Avaliacao';
+import Configuracoes from './containers/Configuracoes';
 
 
 //CONTAINER SEM BASE
 import Login from './containers/Login'
 import RecuperarSenha from './containers/RecuperarSenha'
 import ResetarSenha from './containers/RecuperarSenha/ResetarSenha'
+
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
             <Route path={"/avaliacoes/:id"} component={base(Avaliacoes)}/>
             <Route path={"/avaliacao/:id"} component={base(Avaliacao)}/>
             
+            <Route path={"/configuracoes"} component={base(Configuracoes)}/>
+
             <Route path={"/login"} component={(Login)}/>
             <Route path={"/recuperar-senha"} component={(RecuperarSenha)}/>
             <Route path={"/resetar-senha/:token"} component={(ResetarSenha)}/>

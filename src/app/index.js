@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Provider } from 'react-redux';
 import store from './store'
 
@@ -17,6 +17,7 @@ import Avaliacoes from './containers/Avaliacoes';
 import Avaliacao from './containers/Avaliacao';
 import Configuracoes from './containers/Configuracoes';
 import Perfil from './containers/Perfil';
+import {initApp} from './actions';
 
 
 //CONTAINER SEM BASE
@@ -24,10 +25,11 @@ import Login from './containers/Login'
 import RecuperarSenha from './containers/RecuperarSenha'
 import ResetarSenha from './containers/RecuperarSenha/ResetarSenha'
 
-
-
-
 function App() {
+  
+  useEffect(()=>{
+    initApp();
+  })
   return (
     <Provider store={store}>
       <Router>

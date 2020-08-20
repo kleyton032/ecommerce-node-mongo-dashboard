@@ -1,29 +1,28 @@
 import React from 'react';
-import Base from '../Base';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-const base = Component => {
+const noAuth = Component => {
 
-    class ComponentBase extends React.Component {
+    class ComponentNoAuth extends React.Component {
 
         componentDidMount() {
             const { getUser, authorized, history } = this.props;
             getUser();
-            if (!authorized) history.replace("/login");
+            if (authorized) history.replace("/");
         }
 
         componentDidUpdate(nextProps) {
             const { authorized, history } = this.props;
-            if (authorized && !nextProps.authorized) history.replace("/login");
+            if (!authorized && nextProps.authorized) history.replace("/");
         }
 
 
         render() {
             return (
-                <Base history={this.props.history}>
+                <div>
                     <Component {...this.props} />
-                </Base>
+                </div>
             )
         }
     }
@@ -33,7 +32,7 @@ const base = Component => {
         usuario: state.auth.usuario
     });
 
-    return connect(mapStateToProps, actions)(ComponentBase)
+    return connect(mapStateToProps, actions)(ComponentNoAuth)
 }
 
-export default base;
+export default noAuth;

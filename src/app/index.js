@@ -5,6 +5,7 @@ import store from './store'
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 import base from './containers/HOC/Base';
+import noAuth from './containers/HOC/NoAuth';
 import Pedidos from './containers/Pedidos';
 import Pedido from './containers/Pedido';
 import Clientes from './containers/Clientes';
@@ -21,9 +22,9 @@ import {initApp} from './actions';
 
 
 //CONTAINER SEM BASE
-import Login from './containers/Login'
-import RecuperarSenha from './containers/RecuperarSenha'
-import ResetarSenha from './containers/RecuperarSenha/ResetarSenha'
+import Login from './containers/Login';
+import RecuperarSenha from './containers/RecuperarSenha';
+import ResetarSenha from './containers/RecuperarSenha/ResetarSenha';
 
 function App() {
   
@@ -51,9 +52,9 @@ function App() {
             <Route path={"/configuracoes"} component={base(Configuracoes)}/>
             <Route path={"/perfil"} component={base(Perfil)}/>
 
-            <Route path={"/login"} component={(Login)}/>
-            <Route path={"/recuperar-senha"} component={(RecuperarSenha)}/>
-            <Route path={"/resetar-senha/:token"} component={(ResetarSenha)}/>
+            <Route path={"/login"} component={noAuth(Login)}/>
+            <Route path={"/recuperar-senha"} component={noAuth(RecuperarSenha)}/>
+            <Route path={"/resetar-senha/:token"} component={noAuth(ResetarSenha)}/>
           </div>
       </Router>
     </Provider>

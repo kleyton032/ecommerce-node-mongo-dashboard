@@ -7,14 +7,14 @@ const noAuth = Component => {
     class ComponentNoAuth extends React.Component {
 
         componentDidMount() {
-            const { getUser, authorized, history } = this.props;
+            const { getUser, authorized, history, usuario } = this.props;
             getUser();
-            if (authorized) history.replace("/");
+            if (authorized && usuario.role.includes("admin")) history.replace("/");
         }
 
-        componentDidUpdate(nextProps) {
+        componentDidUpdate(prevProps) {
             const { authorized, history } = this.props;
-            if (!authorized && nextProps.authorized) history.replace("/");
+            if (!authorized && prevProps.authorized && prevProps.usuario.role.includes("admin")) history.replace("/");
         }
 
 

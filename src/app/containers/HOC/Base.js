@@ -8,14 +8,16 @@ const base = Component => {
     class ComponentBase extends React.Component {
 
         componentDidMount() {
-            const { getUser, authorized, history } = this.props;
+            const { getUser, authorized, history, usuario } = this.props;
             getUser();
-            if (!authorized) history.replace("/login");
+            if (!authorized || !usuario || !usuario.role.includes("admin")) history.replace("/login");
         }
 
-        componentDidUpdate(nextProps) {
-            const { authorized, history } = this.props;
-            if (authorized && !nextProps.authorized) history.replace("/login");
+        componentDidUpdate(prevProps) {
+            const { history } = this.props;
+            if( !prevProps.authorized || !prevProps.usuario || !prevProps.usuario.role.includes("admin")){
+                history.replace("/login");
+            }  
         }
 
 

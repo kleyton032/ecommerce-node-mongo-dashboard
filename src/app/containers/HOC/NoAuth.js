@@ -13,8 +13,10 @@ const noAuth = Component => {
         }
 
         componentDidUpdate(prevProps) {
-            const { authorized, history } = this.props;
-            if (!authorized && prevProps.authorized && prevProps.usuario.role.includes("admin")) history.replace("/");
+            const { authorized, history, usuario } = this.props;
+            if (!prevProps.authorized && authorized && usuario.role.includes("admin")){
+                history.replace("/");
+            } 
         }
 
 

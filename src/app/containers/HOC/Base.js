@@ -14,8 +14,8 @@ const base = Component => {
         }
 
         componentDidUpdate(prevProps) {
-            const { history } = this.props;
-            if( !prevProps.authorized || !prevProps.usuario || !prevProps.usuario.role.includes("admin")){
+            const { history, authorized, usuario } = this.props;
+            if( !authorized || !usuario || !usuario.role.includes("admin")){
                 history.replace("/login");
             }  
         }

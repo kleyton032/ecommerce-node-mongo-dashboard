@@ -1,9 +1,15 @@
 import React from 'react';
 
-const InputSimples = ({value, label, type, onChange}) => (
+const InputSimples = ({value, label, type, onChange, error}) => (
     <div className="Input-Simples flex vertical">
         {label && (<label>{label}</label>)}
-        <input type={type} value={value} onChange={onChange}/>
+        {error && (<small className="small-danger">{error}</small>)}
+        <input 
+        type={type} 
+        value={value} 
+        onChange={onChange}
+        className={`${error ? "input-error" : ""}`}/>
+        
     </div>
 )
 

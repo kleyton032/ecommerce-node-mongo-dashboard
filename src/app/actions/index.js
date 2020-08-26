@@ -50,8 +50,17 @@ const errorHandLing = (error) => {
     if (error.response.data.status === 401) {
         return { status: 401, message: "Você não tem autorização para acessar esses dados" }
     }
-    if (error.response.data.error) return { status: 400, message: error.response.data.error }
-    console.log(error.response.data.error)
+    const _erros = error.response.data.err.errors;
+    console.log(_erros)
+    if (_erros && typeof _erros === "string") return { status: 400, message: _erros }
+
+    let msg = `Erro: Preencha corretamente ${_erros.length > 1 ? "os campos de" : "o campo de"}`;
+    _erros.forEach((item, idx) => {
+        const field = item.field[item.field.length - 1];
+        console.log(field)
+        msg += ` ${field}${(_erros.length === idx + 1) ? "." : ","}`
+    });
+    return { status: 400, message: msg }
 }
 
 export const handleLogin = ({ email, password, opcaoLembrar }, callback) => {

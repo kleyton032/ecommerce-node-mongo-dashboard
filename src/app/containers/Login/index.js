@@ -4,6 +4,7 @@ import Titulo from '../../components/Texto/Titulo';
 import Input from '../../components/Inputs/Simples';
 import Checkbox from '../../components/Inputs/Checkbox';
 import Button from '../../components/Button/Simples';
+import Alert from '../../components/Alert/Danger';
 import { connect } from 'react-redux'
 import * as actions from '../../actions'
 import { api, versao } from '../../config/index';
@@ -25,9 +26,9 @@ class Login extends Component {
 
     handleLogin() {
         const { email, senha: password, opcaoLembrar } = this.state;
-        if(!this.validate()) return;
+        if (!this.validate()) return;
         this.props.handleLogin({ email, password, opcaoLembrar }, (error) => {
-            alert(error.message)
+            this.setState({ erros: { ...this.state.erros, form: error } })
         })
     }
 
@@ -57,6 +58,9 @@ class Login extends Component {
                     </div>
 
                     <br />
+
+                    <Alert error={erros.form}/>
+
                     <Input
                         label="E-mail"
                         value={email}

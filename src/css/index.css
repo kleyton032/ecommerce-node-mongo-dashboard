@@ -346,3 +346,22 @@ textarea{
   background-color: var(--cor-cinza-escuro);
   color: var(--cor-cinza-claro);
 }
+
+.alert {
+  width: calc(100%-20px);
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid var(--cor-cinza-escuro);
+  background-color: var(--cor-cinza-claro);
+  font-size: 0.85rem;
+
+}
+.alert span {
+  color: var(--cor-preto);
+}
+
+.alert-danger {
+  border: 2px solid var(--cor-cinza-escuro);
+  background-color: rgb(216, 87, 87);
+}
